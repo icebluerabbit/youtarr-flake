@@ -112,6 +112,7 @@
         nixosModules.youtarr = import ./modules/nixos.nix;
         nixosModules.default = self.nixosModules.youtarr;
 
+        lib.settingsOption = import ./modules/settings.nix;
       };
     };
 }
