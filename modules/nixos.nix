@@ -110,7 +110,7 @@ in
         description = ''
           Path to a file containing the database password.
           The file must contain a line like:
-          <programlisting>DB_PASSWORD=your_password_here</programlisting>
+          `DB_PASSWORD=your_password_here`
         '';
       };
     };
