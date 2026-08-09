@@ -5,14 +5,13 @@
 [![Cachix Cache](https://img.shields.io/badge/Cachix-icebluerabbit--youtarr--flake-blue.svg)](https://icebluerabbit-youtarr-flake.cachix.org)
 [![Nix Built](https://img.shields.io/badge/Nix-Flake-blue.svg?logo=nixos&logoColor=white)](https://nixos.org)
 
-This repository provides a Nix Flake for [**Youtarr**](https://github.com/DialmasterOrg/Youtarr) (a self-hosted YouTube DVR and automator), containing the backend Node Express application package, the React client package, and fully configurable NixOS and Home Manager service modules.
+This repository provides a Nix Flake for [**Youtarr**](https://github.com/DialmasterOrg/Youtarr) (a self-hosted YouTube DVR and automator), containing the backend Node Express application package, the React client package, and a fully configurable NixOS service module.
 
 ---
 
 ## 📚 Documentation
 
 *   [**NixOS Options (`docs/NIXOS_OPTIONS.md`)**](docs/NIXOS_OPTIONS.md): Configuration options for the NixOS service module.
-*   [**Home Manager Options (`docs/HOME_MANAGER_OPTIONS.md`)**](docs/HOME_MANAGER_OPTIONS.md): Configuration options for the Home Manager service module.
 
 ---
 
@@ -64,32 +63,6 @@ Activate the module and declare settings system-wide:
       writeVideoNfoFiles = true;
       sponsorblockEnabled = true;
       sponsorblockAction = "remove";
-    };
-  };
-}
-```
-
-### Home Manager Module
-
-Declare settings on a per-user level using user systemd services:
-
-```nix
-{ inputs, ... }: {
-  imports = [ inputs.youtarr-flake.homeManagerModules.default ];
-
-  services.youtarr = {
-    enable = true;
-    
-    database = {
-      host = "127.0.0.1";
-      user = "youtarr";
-      name = "youtarr";
-      passwordFile = "/home/user/.secrets/youtarr-db-password";
-    };
-
-    settings = {
-      preferredResolution = "720";
-      darkModeEnabled = true;
     };
   };
 }
