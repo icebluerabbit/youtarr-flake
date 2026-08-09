@@ -256,7 +256,7 @@ string
 
 Path to a file containing the database password.
 The file must contain a line like:
-\<programlisting>DB_PASSWORD=your_password_here\</programlisting>
+` DB_PASSWORD=your_password_here `
 
 
 
@@ -459,7 +459,7 @@ attribute set of string
 
 
 
-Declarative configuration options for Youtarr’s \<filename>config.json\</filename>.
+Declarative configuration options for Youtarr’s ` config.json `.
 
 
 

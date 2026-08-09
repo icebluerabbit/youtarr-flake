@@ -414,6 +414,6 @@ lib.mkOption {
   };
   default = { };
   description = ''
-    Declarative configuration options for Youtarr's <filename>config.json</filename>.
+    Declarative configuration options for Youtarr's `config.json`.
   '';
 }
