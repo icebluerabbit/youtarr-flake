@@ -14,7 +14,7 @@
 
 let
   pname = "youtarr";
-  version = "1.84.1";
+  version = "1.85.0";
 in
 buildNpmPackage {
   inherit pname version;
@@ -23,7 +23,7 @@ buildNpmPackage {
     owner = "DialmasterOrg";
     repo = "Youtarr";
     rev = "v${version}";
-    hash = "sha256-z2BFTUZmYyRCruoDXrn6EwlUIU6gli4SnJ2RH4OGgPo=";
+    hash = "sha256-gQh0+8Lh0EHaW/+Z5MC/tu09wVQU24TMehLmZrHyrP0=";
   };
 
   # Use NodeJS required by Youtarr's package.json (engines: >=20.19.0)
@@ -31,7 +31,7 @@ buildNpmPackage {
 
   # Nix needs the hash of the npm dependencies.
   # We set this to fakeHash initially so Nix can calculate and print the correct one.
-  npmDepsHash = "sha256-x7ewGGfb9+SY/xY6sdzU2oH//0PKOnBhy4JLqOUQsHU=";
+  npmDepsHash = "sha256-usZidvPZnCXOL8ZQO9x0EZ5amMuF04h4O4eUWAy4ozE=";
 
   # The backend is a standard Express app without a build compilation step.
   dontNpmBuild = true;
