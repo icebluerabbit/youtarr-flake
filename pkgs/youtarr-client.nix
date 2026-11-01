@@ -7,20 +7,20 @@
 
 buildNpmPackage rec {
   pname = "youtarr-client";
-  version = "1.90.1";
+  version = "1.90.2";
 
   src = fetchFromGitHub {
     owner = "DialmasterOrg";
     repo = "Youtarr";
     rev = "v${version}";
-    hash = "sha256-NEOY07w3WxfVGqWWIX4Xdcc0Lq7PMFwUdOqVariRn3E=";
+    hash = "sha256-6aNg8v89m8DJqvG1kpgdtUiyyzcTr0RAF8sydZLZAGo=";
   };
 
   sourceRoot = "source/client";
 
   # Nix needs the hash of the npm dependencies.
   # We set this to fakeHash initially so Nix can calculate and print the correct one.
-  npmDepsHash = "sha256-qqH2f/K4ampnntQJx4LlVvt5a2oz7g2r9S5GIb7pa98=";
+  npmDepsHash = "sha256-SZMyoKIoH8mxegq3lWsHMUtWUi8L0uPlCbPLiEMb8dE=";
 
   # Disable running checkPhase (tests) since we only want to build the production bundle
   doCheck = false;
